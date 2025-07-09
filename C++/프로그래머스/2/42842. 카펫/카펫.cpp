@@ -12,14 +12,8 @@ vector<int> solution(int brown, int yellow) {
         if(!(x%w == 0)) continue;
         int h = x / w;
         if(((h+w)*2 - 4) == brown){
-            if(h >= w){
-                answer.push_back(h);
-                answer.push_back(w);
-           }
-           else{
-                answer.push_back(w);
-                answer.push_back(h);
-           }
+            answer.push_back(h);
+            answer.push_back(w);
             break;
         }
     }
