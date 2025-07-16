@@ -23,7 +23,6 @@ int solution(int distance, vector<int> rocks, int n) {
     while(left <= right){
         
         int mid = (right + left) / 2;
-        vector<int> d;
         
         int temp = 0;
         int erase = 0;
@@ -33,14 +32,10 @@ int solution(int distance, vector<int> rocks, int n) {
                 erase++;
             }
             else{
-                d.push_back(temp);
                 temp = 0;
             }
         }
         
-        if(temp != 0){
-            d.push_back(temp);
-        }
         
         if(erase > n){
             right = mid - 1;
