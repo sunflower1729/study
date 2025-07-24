@@ -80,7 +80,7 @@ void change_party_true(){
 }
 
 
-int find_answer(){
+void find_answer(){
     int answer = 0;
     for(int i = 0; i < M; i++){
         if(party[i] == 1) answer++;
@@ -89,7 +89,6 @@ int find_answer(){
 }
 
 int main(){
-    int answer = 0;
     (void)scanf(" %d %d", &N, &M);
     
     int true_num;
@@ -106,7 +105,6 @@ int main(){
 
     for(int i = 0; i < M; i++){ //파티번호
         //파티 인원수
-        int flag = 0;
         int party_num;
         (void)scanf(" %d", &party_num); 
 
