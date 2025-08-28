@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #define MAXN 1000000 + 1
-#define MAXM 2000000*2 + 4
+#define MAXM 2000000*2 + 1
 
 int N, M;
 
