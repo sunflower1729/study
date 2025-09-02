@@ -35,7 +35,7 @@ typedef struct q {
     long long value;
 }Queue;
 
-Queue pre_q[5000000] = { 0 };
+Queue pre_q[MAXM * 2] = { 0 };
 int q_pnt = 0;
 
 void swap_q(Queue* a, Queue* b) {
