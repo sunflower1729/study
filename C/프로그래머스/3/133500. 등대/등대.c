@@ -41,7 +41,6 @@ void print_To(int n){
 void light_on(int from){ //a번 불 켜짐
     visited[from] = 2;
     pNode temp = head[from];
-    
 }
 
 void find_one_node(int n){
