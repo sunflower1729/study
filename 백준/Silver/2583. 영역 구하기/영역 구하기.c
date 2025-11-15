@@ -39,6 +39,41 @@ int cmp(const void* a, const void* b){
     return (*(int*)a) - (*(int*)b);
 }
 
+int front, rear;
+
+typedef struct {
+    int y;
+    int x;
+}Node;
+
+Node queue[101 * 101];
+
+int bfs(int sy, int sx){
+    front = rear = 0;
+    queue[rear++] = (Node){sy, sx};
+    visit[sy][sx] = 1;
+    int area = 1;
+
+    while (front < rear)
+    {
+        Node cur = queue[front++];
+        for(int i = 0; i < 4; i++){
+            int ny = cur.y + dy[i];
+            int nx = cur.x + dx[i];
+
+            if(ny >= 0 && nx >= 0 && ny < m && nx < n){
+                if(visit[ny][nx] ==0 && map[ny][nx] == 0){
+                    area++;
+                    visit[ny][nx] = 1;
+                    queue[rear++] = (Node){ny, nx};
+                }
+            }
+
+        }
+    }
+    return area;
+}
+
 int main(){
     (void)scanf("%d %d %d", &m, &n, &k);
 
@@ -54,8 +89,7 @@ int main(){
     for(int i = 0; i < m; i ++){
         for(int j = 0; j < n; j++){
             if(visit[i][j] == 0 && map[i][j] == 0){
-                int area = 0;
-                dfs(i, j, &area);
+                int area = bfs(i, j);
                 arears[area_count++] = area;
             }
         }
